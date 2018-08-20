@@ -1,0 +1,8 @@
+.rate .price-char:nth-last-child(1) {
+    vertical-align: super;
+}
+
+.rate .price-char:nth-last-child(2),
+.rate .price-char:nth-last-child(3) {
+    font-size: 1.5em;
+}
