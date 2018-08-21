@@ -1,0 +1,10 @@
+.pair {
+  display: inline-block;
+}
+
+.pair-header {
+  padding: 3px;
+  text-align: center;
+  color: #fff;
+  background: #888;
+}
