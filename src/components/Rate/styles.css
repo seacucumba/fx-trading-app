@@ -3,6 +3,7 @@
   padding: 5px;
   background: #fff;
   border: 1px solid #ddd;
+  width: 120px;
 }
 
 .rate:hover {
@@ -32,18 +33,4 @@
 
 .rate-desc {
   font-size: 0.5em;
-}
-
-.rate .price {
-  letter-spacing: 1px;
-}
-
-.rate .price-char:nth-last-child(1) {
-  vertical-align: super;
-}
-
-.rate .price-char:nth-last-child(2),
-.rate .price-char:nth-last-child(3) {
-  font-size: 1.5em;
-  font-weight: bolder;
 }

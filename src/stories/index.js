@@ -8,6 +8,7 @@ import { Button, Welcome } from '@storybook/react/demo';
 import Price from '../components/Price';
 import Rate from '../components/Rate';
 import Pair from '../components/Pair';
+import Dashboard from '../containers/Dashboard';
 import '../index.css';
 
 storiesOf('Price', module)
@@ -19,7 +20,10 @@ storiesOf('Rate', module)
   .add('Buy', () => <Rate type="buy" symbol="USD" price="0.99043" />);
 
 storiesOf('Pair', module)
-  .add('Default', () => <Pair name="USD CHF" buyPrice={0.99143} sellPrice={0.99043} />);
+  .add('Default', () => <Pair pair="USD CHF" buy={0.99143} sell={0.99043} />);
+
+storiesOf('Dashboard', module)
+  .add('Default', () => <Dashboard />);
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 

@@ -10,7 +10,7 @@ const Rate = ({type, symbol, price}) =>
       <span>{type === 'sell' ? 'Sell' : 'Buy'}&nbsp;</span>
       <span>{symbol}</span>
     </div>
-    <Price value={price} precision={5}/>
+    <Price value={price} />
   </div>;
 
 Rate.propTypes = {

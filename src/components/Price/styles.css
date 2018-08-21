@@ -1,0 +1,13 @@
+.price {
+  letter-spacing: 0.3px;
+}
+
+.price-char--digit:nth-last-child(1) {
+  vertical-align: super;
+}
+
+.price-char--digit:nth-last-child(2),
+.price-char--digit:nth-last-child(3) {
+  font-size: 1.5em;
+  font-weight: bolder;
+}

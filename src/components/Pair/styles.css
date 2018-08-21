@@ -1,5 +1,6 @@
 .pair {
   display: inline-block;
+  border: 1px solid #ddd;
 }
 
 .pair-header {
@@ -7,4 +8,13 @@
   text-align: center;
   color: #fff;
   background: #888;
+}
+
+.pair-rates {
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+.pair-rates .rate {
+  margin: 0 5px;
 }
