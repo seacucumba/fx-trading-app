@@ -5,15 +5,29 @@
   border: 1px solid #ddd;
 }
 
+.rate:hover {
+  color: #fff;
+  border-color: #50acc4;
+  cursor: pointer;
+}
+
 .rate--sell {
   color: red;
   padding-right: 30px;
+}
+
+.rate--sell:hover {
+  background-color: #fc0d1b;
 }
 
 .rate--buy {
   color: green;
   padding-left: 30px;
   text-align: right;
+}
+
+.rate--buy:hover {
+  background-color: #81cf47;
 }
 
 .rate-desc {
