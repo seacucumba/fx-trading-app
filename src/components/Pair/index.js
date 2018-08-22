@@ -5,8 +5,8 @@ import PriceDirection from '../PriceDirection';
 import './styles.css';
 
 const getSymbol = pairName =>
-  name
-    ? name.split(' ')[0]
+  pairName
+    ? pairName.split(' ')[0]
     : '';
 
 export default class Pair extends PureComponent {
@@ -24,11 +24,11 @@ export default class Pair extends PureComponent {
     return (
       <div className="pair">
         <header className="pair-header">{pair}</header>
+        <PriceDirection direction={priceDirection} />
         <div className="pair-rates">
           <Rate type="sell" symbol={symbol} price={sell} />
           <Rate type="buy" symbol={symbol} price={buy} />
         </div>
-        <PriceDirection direction={priceDirection} />
       </div>
     );
   }

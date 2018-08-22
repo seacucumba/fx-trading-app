@@ -1,14 +1,11 @@
-.price-direction {
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
+.price-direction--increased .arrow {
+  fill: green;
 }
 
-.price-direction--increased {
-  background: green;
+.price-direction--decreased .arrow {
+  fill: red;
 }
 
-.price-direction--decreased {
-  background: red;
+.price-direction--decreased svg {
+  transform: rotate(180deg);
 }
