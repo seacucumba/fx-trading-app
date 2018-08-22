@@ -1,6 +1,7 @@
 .pair {
   display: inline-block;
   border: 1px solid #ddd;
+  position: relative;
 }
 
 .pair-header {
@@ -17,4 +18,11 @@
 
 .pair-rates .rate {
   margin: 0 5px;
+}
+
+.pair .price-direction {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
 }

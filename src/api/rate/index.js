@@ -1,3 +1,5 @@
+import RateGenerator from './rate.generator';
+
 export const INITIAL_RATES = [
   {"pair":"USD CHF", "buy":0.99143, "sell":0.99043},
   {"pair":"GBP USD", "buy":1.28495, "sell":1.2836},
@@ -7,13 +9,11 @@ export const INITIAL_RATES = [
   {"pair":"EUR JPY", "buy":120.589, "sell":120.491},
 ];
 
+const rateIterator = RateGenerator(INITIAL_RATES);
+
 export default class RateApi {
 
   static getRates = () =>
-    INITIAL_RATES.map(rate => ({
-      ...rate,
-      buy: +(rate.buy * Math.random()).toFixed(5),
-      sell: +(rate.sell * Math.random()).toFixed(5),
-    }));
+    rateIterator.next().value;
 
 }

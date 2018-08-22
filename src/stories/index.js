@@ -8,9 +8,9 @@ import { Button, Welcome } from '@storybook/react/demo';
 import Price from '../components/Price';
 import Rate from '../components/Rate';
 import Pair from '../components/Pair';
-import PairList from '../components/PairList';
+import PriceDirection from '../components/PriceDirection';
 import Dashboard from '../components/Dashboard';
-import RatesProvider from '../components/RatesProvider';
+import RatesProvider from '../hoc/RatesProvider';
 import '../index.css';
 
 storiesOf('Price', module)
@@ -22,7 +22,13 @@ storiesOf('Rate', module)
   .add('Buy', () => <Rate type="buy" symbol="USD" price="0.99043" />);
 
 storiesOf('Pair', module)
-  .add('Default', () => <Pair pair="USD CHF" buy={0.99143} sell={0.99043} />);
+  .add('Default', () => <Pair pair="USD CHF" buy={0.99143} sell={0.99043} />)
+  .add('Price Increased', () => <Pair pair="USD CHF" buy={0.99143} sell={0.99043} priceDirection={1} />)
+  .add('Price Decreased', () => <Pair pair="USD CHF" buy={0.99143} sell={0.99043} priceDirection={-1} />);
+
+storiesOf('PriceDirection', module)
+  .add('Price Increased', () => <PriceDirection direction={1} />)
+  .add('Price Decreased', () => <PriceDirection direction={-1} />);
 
 const pairs = [
   {"pair":"USD CHF", "buy":0.99143, "sell":0.99043},

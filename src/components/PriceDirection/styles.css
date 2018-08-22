@@ -1,0 +1,14 @@
+.price-direction {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.price-direction--increased {
+  background: green;
+}
+
+.price-direction--decreased {
+  background: red;
+}

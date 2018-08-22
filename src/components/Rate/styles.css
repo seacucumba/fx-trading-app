@@ -1,14 +1,12 @@
 .rate {
+  position: relative;
   display: inline-block;
   padding: 5px;
-  background: #fff;
-  border: 1px solid #ddd;
   width: 120px;
 }
 
 .rate:hover {
   color: #fff;
-  border-color: #50acc4;
   cursor: pointer;
 }
 
@@ -17,8 +15,8 @@
   padding-right: 30px;
 }
 
-.rate--sell:hover {
-  background-color: #fc0d1b;
+.rate--sell:hover .rate-bg-image .path {
+  fill: #fc0d1b;
 }
 
 .rate--buy {
@@ -27,10 +25,25 @@
   text-align: right;
 }
 
-.rate--buy:hover {
-  background-color: #81cf47;
+.rate--buy:hover .rate-bg-image .path {
+  fill: #81cf47;
 }
 
 .rate-desc {
   font-size: 0.5em;
+}
+
+.rate-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.rate:hover .rate-bg-image .path {
+  stroke: #50acc4;
+}
+
+.rate--buy .rate-bg-image {
+  transform: rotate(180deg);
 }
