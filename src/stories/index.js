@@ -1,10 +1,5 @@
 import React from 'react';
-
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
-
-import { Button, Welcome } from '@storybook/react/demo';
 import Price from '../components/Price';
 import Rate from '../components/Rate';
 import Pair from '../components/Pair';
@@ -14,12 +9,11 @@ import RatesProvider from '../hoc/RatesProvider';
 import '../index.css';
 
 storiesOf('Price', module)
-  .add('Price', () => <Price value={5} precision={5} />);
-
+  .add('Price', () => <Price value={5.01234} />);
 
 storiesOf('Rate', module)
-  .add('Sell', () => <Rate type="sell" symbol="USD" price="0.99043" />)
-  .add('Buy', () => <Rate type="buy" symbol="USD" price="0.99043" />);
+  .add('Sell', () => <Rate type="sell" symbol="USD" price={0.99043} />)
+  .add('Buy', () => <Rate type="buy" symbol="USD" price={0.99043} />);
 
 storiesOf('Pair', module)
   .add('Default', () => <Pair pair="USD CHF" buy={0.99143} sell={0.99043} />)
@@ -47,16 +41,4 @@ storiesOf('Live Rates', module)
     <RatesProvider interval={1000}>
       <Dashboard />
     </RatesProvider>
-  ));
-
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
-
-storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
   ));
