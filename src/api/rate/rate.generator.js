@@ -1,5 +1,5 @@
-const generatePrice = initial =>
-  +(initial * Math.random()).toFixed(5);
+const generatePrice = (initial, delta) =>
+  +(initial * (1 + 2 * delta * Math.random() - delta)).toFixed(5);
 
 const getPriceDirection = (next, prev) =>
   next === prev
@@ -8,12 +8,12 @@ const getPriceDirection = (next, prev) =>
       ? 1
       : -1;
 
-export default function* (initialRates) {
+export default function* (initialRates, delta) {
   let rates = initialRates;
 
   const produceNextRates = (rate, index) => {
-    const buy = generatePrice(initialRates[index].buy);
-    const sell = generatePrice(initialRates[index].sell);
+    const buy = generatePrice(initialRates[index].buy, delta);
+    const sell = generatePrice(initialRates[index].sell, delta);
 
     return {
       ...rate,

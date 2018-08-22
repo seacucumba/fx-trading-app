@@ -9,7 +9,9 @@ export const INITIAL_RATES = [
   {"pair":"EUR JPY", "buy":120.589, "sell":120.491},
 ];
 
-const rateIterator = RateGenerator(INITIAL_RATES);
+const DELTA = 0.1; // 10%;
+
+const rateIterator = RateGenerator(INITIAL_RATES, DELTA);
 
 export default class RateApi {
 
