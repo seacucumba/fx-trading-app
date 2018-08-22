@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+## Live Demo
+https://fx-trading-app.now.sh/
+
 ## Available Scripts
 
 In the project directory, you can run:
