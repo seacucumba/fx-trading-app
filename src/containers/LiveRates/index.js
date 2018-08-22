@@ -11,7 +11,7 @@ class LiveRates extends React.Component {
       </RatesProvider>
     );
   }
-  
+
 }
 
 export default LiveRates;
