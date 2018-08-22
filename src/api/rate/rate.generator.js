@@ -11,19 +11,20 @@ const getPriceDirection = (next, prev) =>
 export default function* (initialRates) {
   let rates = initialRates;
 
+  const produceNextRates = (rate, index) => {
+    const buy = generatePrice(initialRates[index].buy);
+    const sell = generatePrice(initialRates[index].sell);
+
+    return {
+      ...rate,
+      buy,
+      sell,
+      priceDirection: getPriceDirection(buy, rates[index].buy),
+    };
+  };
+
   while(true) {
-    rates = initialRates.map((rate, index) => {
-      const buy = generatePrice(initialRates[index].buy);
-      const sell = generatePrice(initialRates[index].sell);
-
-      return {
-        ...rate,
-        buy,
-        sell,
-        priceDirection: getPriceDirection(buy, rates[index].buy),
-      };
-    });
-
+    rates = initialRates.map(produceNextRates);
     yield rates;
   }
 }
